@@ -6,7 +6,7 @@ import streamlit as st
 
 from agent import AgentExecutor
 from Tools_manager.Rag_tool import RAGService
-from version_base.until.table_data_preprocess import preprocess_table, get_all_file_paths
+from until.table_data_preprocess import preprocess_table, get_all_file_paths
 
 st.set_page_config(layout="wide")
 
@@ -34,8 +34,7 @@ common_bubble_style = """
 }
 
 .bot-bubble {
-    background-color: #5bc0de;
-    color: white;
+    background-color: #d9edf7;
     border-radius: 0 15px 15px 15px;
     text-align: left;
 }

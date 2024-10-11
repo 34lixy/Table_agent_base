@@ -42,7 +42,7 @@ class CustomLLM:
                     temperature=0.2,
                     messages=messages
                 )
-                print(completion)
+
                 result = json.loads(completion.model_dump_json())
                 response_content = result['choices'][0]['message']['content']
                 return response_content

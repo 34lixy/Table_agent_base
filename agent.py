@@ -4,9 +4,6 @@ import logging
 import os
 import time
 from typing import Any, Dict, Optional, Union
-
-import requests
-
 from Model_manager.API_service import CustomLLM
 from Model_manager.Local_service import LocalLLM
 from Tools_manager import ToolManager
@@ -144,6 +141,7 @@ class AgentExecutor:
         if tool_name == "Final Answer":
             final_answer = tool_args.get("answer", "")
             self.agent_scratch += f"\n思考: {thoughts}\n最终结果: {final_answer}\n"
+            print('最终答案：', final_answer)
             return final_answer
 
         # 执行工具函数并更新思考过程
