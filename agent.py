@@ -179,7 +179,6 @@ if __name__ == '__main__':
 
     request_time = 10
     agent = AgentExecutor()
-    # query = "帮我写一份2024年3月36大中城市居民消费价格分析数据报告"
 
     while True:
         user_input = input("请输入您的目标:")
@@ -188,3 +187,4 @@ if __name__ == '__main__':
         output = agent.agent_execute(user_input, table_des=des)
         chat_cot = agent.get_agent_scratch()
         print('最终答案：', output)
+# query = "帮我写一份2024年3月36大中城市居民消费价格分析数据报告"
