@@ -1,4 +1,4 @@
-from LLM_Service.LLM_service import CustomLLM
+from Model_manager.LLM_service import CustomLLM
 
 
 def split_query(query, data_str):

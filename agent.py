@@ -7,9 +7,9 @@ from typing import Any, Dict, Optional, Union
 
 import requests
 
-from LLM_Service.LLM_service import CustomLLM
-from tools_set import ToolManager
-from tools_set.Rag_tool import RAGService
+from Model_manager.LLM_service import CustomLLM
+from Tools_manager import ToolManager
+from Tools_manager.Rag_tool import RAGService
 from until.table_data_preprocess import preprocess_table, get_all_file_paths
 
 os.makedirs('log', exist_ok=True)
