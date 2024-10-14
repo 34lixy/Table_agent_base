@@ -5,9 +5,9 @@ from openai import OpenAI
 
 
 # 配置 OpenAI 服务
-API_KEY = os.getenv('OPENAI_API_KEY')
-BASE_URL = os.getenv('OPENAI_BASE_URL')
-model_name = 'qwen2.5-32b-instruct'
+API_KEY = os.getenv('QWEN_API_KEY')
+BASE_URL = os.getenv('QWEN_BASE_URL')
+model_name = 'qwen2.5-14b-instruct'
 
 
 class CustomLLM:

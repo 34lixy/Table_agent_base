@@ -137,11 +137,12 @@ if __name__ == '__main__':
                     display_processed_data(st.session_state.table, f"显示全部{original_filename}数据")
 
             file_list = get_all_file_paths(save_directory)
-            st.session_state.embed.initialize_vector_store(file_list)
+            if st.button('载入本地知识库'):
+                st.session_state.embed.initialize_vector_store(file_list)
 
-            st.session_state.table_des = preprocess_table(save_directory)
+                st.session_state.table_des = preprocess_table(save_directory)
 
-            shutil.rmtree(save_directory)
+                shutil.rmtree(save_directory)
 
     with st.form(key="query_form"):
         user_input = st.text_area("输入您要查询的问题:", value="", key='user_input', help='在这里输入你的问题')

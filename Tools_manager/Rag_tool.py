@@ -82,13 +82,16 @@ class RAGService:
 class SimilaritySearcher:
     def __init__(self,
                  document_path='cache/document.pkl',
-                 vectors_single_path='cache/vectors_store.pkl', ):
+                 vectors_single_path='cache/vectors_store.pkl'):
+
         with open(document_path, 'rb') as f:
             self.document = pickle.load(f)
         with open(vectors_single_path, 'rb') as f:
             self.vector_store = pickle.load(f)
+
         self.byte_store = InMemoryByteStore()
         self.document_key = "doc_id"
+
         self.multi_retriever = MultiVectorRetriever(
             vectorstore=self.vector_store,
             byte_store=self.byte_store,
@@ -154,6 +157,8 @@ if __name__ == '__main__':
     files_paths = ['../data/最近10年行政区数.csv']
     questions = ["请理解给出数据源中的指标名及对应的数字，输出2023年的县级市数", '2023年县级市数']
     rag.initialize_vector_store(files_paths, chunk_nums=3)
+
+
     searcher = SimilaritySearcher()
     res = searcher.process_queries(questions, chunk_nums=3)
     print(res)
